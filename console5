@@ -1,0 +1,54 @@
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm day5_tb.A day5_tb.A4 day5_tb.AND_Y day5_tb.B day5_tb.B4 day5_tb.C1_EQ day5_tb.C1_GT day5_tb.C1_LT day5_tb.EQ day5_tb.GT day5_tb.LT day5_tb.NOT_Y day5_tb.OR_Y day5_tb.RTL_EQ day5_tb.RTL_GT day5_tb.RTL_LT day5_tb.TOP_EQ day5_tb.TOP_GT day5_tb.TOP_LT day5_tb.XOR_Y
+Created probe 1
+ncsim> run
+=================================================
+       DAY 5 : 4-BIT COMPARATOR VERIFICATION
+=================================================
+
+---- 1. BASIC GATE VERIFICATION ----
+GATE 00 : PASS
+GATE 01 : PASS
+GATE 10 : PASS
+GATE 11 : PASS
+
+---- 2. 1-BIT COMPARATOR ----
+1-BIT 00 : PASS
+1-BIT 01 : PASS
+1-BIT 10 : PASS
+1-BIT 11 : PASS
+
+---- 3. 4-BIT COMPARATOR ----
+4-BIT 5 > 3 : PASS
+4-BIT 3 < 5 : PASS
+4-BIT 7 = 7 : PASS
+4-BIT 15 > 0 : PASS
+4-BIT 0 < 15 : PASS
+
+---- 4. MSB PRIORITY TEST ----
+MSB PRIORITY 1 : PASS
+MSB PRIORITY 2 : PASS
+
+---- 5. LOWER-BIT PRIORITY TEST ----
+LOWER BIT TEST 1 : PASS
+LOWER BIT TEST 2 : PASS
+
+---- 6. GATE-LEVEL VS RTL ----
+COMPARE 0 vs 0 : PASS
+COMPARE 5 vs 2 : PASS
+COMPARE 2 vs 5 : PASS
+COMPARE 15 vs 15 : PASS
+
+---- 7. TOP MODULE VERIFICATION ----
+TOP 12 > 3 : PASS
+TOP 3 < 12 : PASS
+TOP 10 = 10 : PASS
+
+=================================================
+       DAY 5 VERIFICATION COMPLETED
+=================================================
+Simulation complete via $finish(1) at time 240 NS + 0
+./day5_tb.v:519         $finish;
+ncsim> 
